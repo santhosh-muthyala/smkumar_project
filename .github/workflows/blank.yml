@@ -40,12 +40,16 @@ jobs:
   second:
     runs-on: ubuntu-latest
 
+    needs: build
+
     steps:
       - name: Run some command
         run: echo "Inside the second job"
 
   third:
     runs-on: ubuntu-latest
+
+    needs: second
 
     steps:
       - name: Run some command
